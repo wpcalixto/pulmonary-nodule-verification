@@ -1,0 +1,15 @@
+{
+ "generated": "2026-08-12T22:46:06",
+ "lock_id": "treino_2026-08-12",
+ "lock_sha256": "dc5f944860772f4f6498857712553a8df1aabb3192feb283ab354da10027cac1",
+ "n_packages": 97,
+ "nnunetv2": [
+  "nnunetv2==2.5.2"
+ ],
+ "note_lungmask": "o lungmask so e usado pelo Script 06, que corre exclusivamente no 5070; nao entra no ambiente de treino.",
+ "origin": "compute-node:~/venv_nnunet252_cuda \u2014 a maquina que produziu a cadeia 00-08",
+ "torch": [
+  "torch==2.11.0+cu128"
+ ],
+ "why": "os tres ambientes de treino \u2014 5070, 5060 Ti e Vast \u2014 tem de correr o MESMO conjunto de versoes. Divergiam em numpy (2.5.2 vs 2.5.1) e blosc2 (4.10.1 vs 4.10.0); blosc2 descomprime os dados de treino e numpy toca em tudo. Nao ha razao para arriscar diferenca numerica entre placas por causa de uma versao menor."
+}

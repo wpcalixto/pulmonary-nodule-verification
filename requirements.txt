@@ -1,0 +1,18 @@
+# Third-party packages imported by the code (pinned where the version is recorded in environment/).
+SimpleITK==2.5.6
+lungmask
+nnunetv2==2.8.1
+numpy==2.5.3
+pandas
+pydicom
+pylidc==0.2.1
+requests
+scipy==1.18.1
+scikit-learn
+statsmodels
+tcia_utils
+torch==2.11.0  # CUDA 12.8 build
+pyarrow
+matplotlib
+seaborn
+kneed

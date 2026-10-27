@@ -1,0 +1,63 @@
+{
+  "DERIVED_FROM": "custom_trainers_2026-08-11",
+  "DERIVED_FROM_REPOSITORY_HASH": "5c49e4187e506d4edc42ad35a5a6068d397ed30f5244575cb396c523a93e6b65",
+  "DO_NOT_USE_WITH": "nnunetv2 2.5.2 — usar Scripts/trainers/",
+  "INSTALL_IN_CANONICAL_CLUSTER": "ONLY_BY_SCRIPT00",
+  "NNUNET_VERSION": "2.8.1",
+  "REASON_FOR_SEPARATE_SET": "A assinatura da classe base perdeu `unpack_dataset` no 2.8.1 e o run_training de cada versao constroi em conformidade. A base monta my_init_kwargs lendo a assinatura da SUBCLASSE contra os locais da BASE, portanto declarar um parametro a mais da KeyError e declarar a menos da TypeError. Nenhuma assinatura estatica serve as duas pilhas.",
+  "SEMANTICS_CHANGED": false,
+  "SEMANTICS_NOTE": "Overrides identicos ao conjunto 2.5.2: save_every 10, oversample_foreground_percent 1.0, initial_lr 5e-3. Muda a chamada a base.",
+  "generated": "2026-08-20T21:21:50",
+  "manifest_id": "custom_trainers_281_2026-08-20",
+  "repository_hash": "6a436132e8357b23a087b84c90d5a531a37dfcf10a282a7a71b21c88a907e7db",
+  "trainers": [
+    {
+      "BASE_CLASS": null,
+      "INIT_SIGNATURE": "(self, plans: dict, configuration: str, fold: int, dataset_json: dict, device: torch.device = torch.device('cuda'))",
+      "OVERRIDDEN_FIELDS": null,
+      "SHA256": "dab893b268702b887192fb04da83b371781d623369a2a16b0f2515dbea75b6f7",
+      "SHA256_IN_252_SET": null,
+      "SOURCE_STATUS": "DERIVED_FROM_2.5.2_SET",
+      "name": "nnUNetTrainerCheckEvery10",
+      "nature": null,
+      "path": "trainers_281/nnUNetTrainerCheckEvery10.py",
+      "reconstruction_reason": "assinatura da base sem `unpack_dataset` no 2.8.1; my_init_kwargs le a assinatura da subclasse contra os locais da base"
+    },
+    {
+      "BASE_CLASS": null,
+      "INIT_SIGNATURE": "(self, plans: dict, configuration: str, fold: int, dataset_json: dict, device: torch.device = torch.device('cuda'))",
+      "OVERRIDDEN_FIELDS": null,
+      "SHA256": "aa59ad18f964ff8f4cae0cf7ee0eced82c6890068e0aef2c71b090549e531a14",
+      "SHA256_IN_252_SET": null,
+      "SOURCE_STATUS": "DERIVED_FROM_2.5.2_SET",
+      "name": "nnUNetTrainer_Foreground100",
+      "nature": null,
+      "path": "trainers_281/nnUNetTrainer_Foreground100.py",
+      "reconstruction_reason": "assinatura da base sem `unpack_dataset` no 2.8.1; my_init_kwargs le a assinatura da subclasse contra os locais da base"
+    },
+    {
+      "BASE_CLASS": null,
+      "INIT_SIGNATURE": "(self, plans: dict, configuration: str, fold: int, dataset_json: dict, device: torch.device = torch.device('cuda'))",
+      "OVERRIDDEN_FIELDS": null,
+      "SHA256": "522f862d8962ec2d0f48ee17abc7f395d3e286cf6f33ed36cbb9a4bcfe682718",
+      "SHA256_IN_252_SET": null,
+      "SOURCE_STATUS": "DERIVED_FROM_2.5.2_SET",
+      "name": "nnUNetTrainer_Foreground100_LR5e3",
+      "nature": null,
+      "path": "trainers_281/nnUNetTrainer_Foreground100_LR5e3.py",
+      "reconstruction_reason": "assinatura da base sem `unpack_dataset` no 2.8.1; my_init_kwargs le a assinatura da subclasse contra os locais da base"
+    }
+  ],
+  "validation": {
+    "INSTANTIATION_VIA_RUN_TRAINING_PATH": "PASS",
+    "class_name_and_inheritance": "PASS",
+    "date": "2026-08-20",
+    "direct_import": "PASS",
+    "host": "compute-node",
+    "inheritance_LR5e3_oversample": "PASS (1.0)",
+    "my_init_kwargs": "PASS (configuration, dataset_json, device, fold, plans)",
+    "nnunet_version_tested": "2.8.1",
+    "overrides_effective": "PASS (10 / 1.0 / 0.005)",
+    "recursive_find_python_class": "PASS (3/3)"
+  }
+}

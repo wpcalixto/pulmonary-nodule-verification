@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+type: dataset
+title: "Multiscale morphology-informed post-detection verification of pulmonary nodule candidates in CT: code, trained nnU-Net models, cohort splits and analysis data"
+version: v1.0.0
+doi: 10.5281/zenodo.23674673
+license: [MIT, CC-BY-4.0]
+authors:
+  - family-names: "Calixto"
+    given-names: "Wesley Pacheco"
+    orcid: "https://orcid.org/0000-0002-1928-4432"
+    affiliation: "EMC/UFG; ISR/University of Coimbra; CPDT/IFG"
+  - family-names: "Camargo"
+    given-names: "Thiago Fellipe O."
+    orcid: "https://orcid.org/0000-0002-6917-8339"
+    affiliation: "EMC/UFG; CPDT/IFG; Hospital Israelita Albert Einstein"
+  - family-names: "Pacheco"
+    given-names: "Viviane M. Gomes"
+    orcid: "https://orcid.org/0000-0003-3693-4377"
+    affiliation: "EMC/UFG; CPDT/IFG; PUC Goias"
+  - family-names: "Martins"
+    given-names: "Marcella Scoczynski R."
+    orcid: "https://orcid.org/0000-0002-5716-4968"
+    affiliation: "UTFPR, Ponta Grossa"
+  - family-names: "Coimbra"
+    given-names: "Antonio Paulo"
+    orcid: "https://orcid.org/0000-0003-3780-2405"
+    affiliation: "ISR/University of Coimbra"
+keywords:
+  - "Pulmonary nodules"
+  - "Computed tomography"
+  - "Computer-aided detection"
+  - "False-positive reduction"
+  - "Multiscale morphology"
+  - "Repeatability"
+  - "External validation"
+  - "nnU-Net"
+repository-code: "https://doi.org/10.5281/zenodo.23674673"

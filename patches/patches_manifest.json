@@ -1,0 +1,39 @@
+{
+ "INSTALL": "ONLY_BY_SCRIPT00",
+ "NNUNET_VERSION": "2.5.2",
+ "RULE": "o ficheiro a substituir tem de bater com EXPECTED_ORIGINAL_SHA256. Se nao bater, o pacote nao e o que julgamos e o patch NAO se aplica.",
+ "generated": "2026-08-12T10:02:11",
+ "manifest_id": "package_patches_2026-08-12",
+ "patches": [
+  {
+   "EVIDENCE": "ensaio 09 --smoke 5 em compute-node, 2026-08-11: falha reproduzida com o ficheiro original",
+   "EXPECTED_ORIGINAL_SHA256": "b58eb2d83c0f3c6c72503d7d65870e888937321e3b2fc86266e92236d232e923",
+   "SHA256": "fd3a8df4fa384d6a8d1912484805f72b936e46d6182bb93c368948efb89ce0a9",
+   "kind": "FILE",
+   "name": "polylr",
+   "nature": "COMPATIBILITY",
+   "path": "patches/polylr.py",
+   "reason": "nnU-Net 2.5.2 passa `verbose` posicional ao LRScheduler; o torch removeu esse argumento. TypeError em configure_optimizers, em todas as arquiteturas, antes da primeira epoca.",
+   "scope": "uma linha; nao traz `_last_lr`/`get_last_lr` do 2.8.1",
+   "target_module": "nnunetv2/training/lr_scheduler/polylr.py",
+   "upstream_reference": "nnU-Net 2.8.1 tem exactamente esta linha; verificado contra a copia instalada em ~/ml no no compute-node",
+   "verified_no_caller": "get_last_lr nao e chamado em nenhum ponto do nnunetv2 2.5.2"
+  },
+  {
+   "EVIDENCE": "ensaio 09 --smoke 5 em compute-node, 2026-08-11 23:10: o treino completou as 5 epocas e falhou ao reler o proprio checkpoint",
+   "EXPECTED_ORIGINAL_SHA256": "b7cd24e0dcb02f5e02ecaadba386479ee0771b61cfbbf9be5c132b8b7aa0db0f",
+   "SHA256": "349be062e661988cb23f59d651624228e933def83b4cd554c55dba51933e5289",
+   "kind": "LINE",
+   "line_number": 1184,
+   "match": "            checkpoint = torch.load(filename_or_checkpoint, map_location=self.device)",
+   "name": "trainer_load_checkpoint_weights_only",
+   "nature": "COMPATIBILITY",
+   "occurrences_expected": 1,
+   "reason": "PyTorch 2.6 mudou o omissao de `weights_only` em `torch.load` de False para True. O checkpoint do nnU-Net contem escalares de NumPy, que o carregador restrito recusa: UnpicklingError. Atinge `load_checkpoint`, e portanto a retoma (--continue), o auto-resume e a validacao final que corre no fim de cada fold.",
+   "replace": "            checkpoint = torch.load(filename_or_checkpoint, map_location=self.device, weights_only=False)",
+   "target_module": "nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py",
+   "upstream_reference": "nnU-Net 2.8.1 tem exactamente esta linha (linha 1225 do ficheiro dessa versao); copia de referencia guardada em patches/referencia_upstream_281/ com PROVENANCE.json",
+   "why_line_not_file": "o ficheiro tem 1.400 linhas e nao e nosso. Substitui-lo inteiro congelaria na nossa copia tudo o resto que nao inspeccionamos, e uma reinstalacao do pacote deixaria de repor o original. Substitui-se UMA linha, verificando o hash do ficheiro antes e depois."
+  }
+ ]
+}
