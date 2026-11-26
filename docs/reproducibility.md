@@ -11,3 +11,5 @@
   by the frozen training-collapse monitor at epoch 300 (no learning) and are provided as `checkpoint_latest.pth` with the abort record (`estado_fold.json`).
   Validation probability maps (`.npz`) are not included.
 - **Integrity.** `checksums/checksums_sha256.txt` and `metadata/file_manifest.csv`; `python tests/test_smoke.py --checksums`.
+- **Stages 28–32 (v1.1.0).** Taken from the executed analysis folders, anonymized where the radiologist was named, re-annotated with the standard header, comments removed and absolute path prefixes made relative; the abstract syntax tree of each file was compared before and after (71/71 identical, with the path prefixes normalized). Their result tables are in `data/stage_outputs_28_32/`.
+- **LNDb reference.** All LNDb results of the article use the N1 reference built in stage 28 (211 analytical scans; 224 unique images as sensitivity analysis). The LNDb metrics produced by stages 22–25 with the earlier local majority reference are superseded.

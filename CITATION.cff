@@ -1,9 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this material, please cite it as below."
 type: dataset
-title: "Multiscale morphology-informed post-detection verification of pulmonary nodule candidates in CT: code, trained nnU-Net models, cohort splits and analysis data"
-version: v1.0.0
-doi: 10.5281/zenodo.23674673
+title: "Reproducibility package for multiscale morphology-informed post-detection verification of deep learning pulmonary nodule candidates in computed tomography: code, trained nnU-Net models, cohort splits and analysis data"
+version: v1.1.0
+date-released: "2026-11-26"
+doi: 10.5281/zenodo.23674672
 license: [MIT, CC-BY-4.0]
 authors:
   - family-names: "Calixto"
@@ -32,7 +33,12 @@ keywords:
   - "Computer-aided detection"
   - "False-positive reduction"
   - "Multiscale morphology"
-  - "Repeatability"
+  - "Hessian-based filters"
+  - "Test-retest repeatability"
   - "External validation"
   - "nnU-Net"
-repository-code: "https://doi.org/10.5281/zenodo.23674673"
+repository-code: "https://github.com/wpcalixto/pulmonary-nodule-verification"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23674672
+    description: "Concept DOI (all versions)"

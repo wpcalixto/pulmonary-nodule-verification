@@ -5,5 +5,5 @@ with and without 100%% foreground oversampling) were trained with five-fold cros
 (LIDC-IDRI). Predicted components were matched one-to-one to reference components with the Hungarian algorithm (IoU). Sixteen
 multiscale morphological and anatomical responses were computed for each object and a post-detection verifier was trained on
 out-of-fold predictions, frozen, and applied without re-tuning to the internal validation set (BD1), to RIDER test-retest pairs
-(repeatability) and to LNDb (external validation). Stage-by-stage description: `docs/usage.md`; design: 718 development patients,
+(repeatability) and to LNDb (external validation), where the reference (N1) is the union of the readers' segmentations of each official lesion. Selective verification, the comparison with a size-only model (Model C), ablations, segmentation geometry and an exploratory radiological assessment complete the analyses (stages 28–32). Stage-by-stage description: `docs/usage.md`; design: 718 development patients,
 158 internal-validation patients, 31 test-retest pairs, 211 external scans.

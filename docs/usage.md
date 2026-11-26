@@ -47,7 +47,13 @@ python scripts/01_download_datasets.py            # LIDC-IDRI, RIDER Lung CT, LN
 | 24 | `scripts/24_integrated_statistics.py` | Integrates all results: patient-level bootstrap confidence intervals and Holm correction across comparisons. |
 | 25 | `scripts/25_generate_tables_and_figures.py` | Generates the tables and figures of the manuscript from the stage outputs. |
 | 26 | `scripts/26_reproducibility_audit.py` | Reproducibility audit: arithmetic identities, leakage checks, mask alignment, seeds, frozen parameters and manuscript consistency. |
-| 27 | `scripts/27_export_manuscript_package.py` | Assembles the manuscript results package (main and supplementary results, LaTeX tables, captions and figures). |
+| 28 | `scripts/28_lndb_reference_rectification/` | LNDb N1 reference, reproduction of cropping and inference for the 13 non-analytical scans, and re-evaluation of frozen predictions and verifier decisions (supersedes the LNDb metrics of stages 22–25). |
+| 29 | `scripts/29_selective_verification/` | Selective verification by detector confidence with Model A for the remaining candidates. |
+| 30 | `scripts/30_radiological_assessment/` | Linkage of the radiological records to predicted and reference objects, verifier decisions and geometry. |
+| 31 | `scripts/31_model_c_and_ablation/` | Models B and C and Model A ablations in the development folds; Model C applied to internal and external candidates. |
+| 32 | `scripts/32_supplementary_analyses/` | Supplementary analyses (IoU threshold, B versus C, LNDb cohort audit, threshold stability, segmentation geometry, reference unit, inter-reader agreement, matching audits, operating intervals). |
+
+Stages 28–32 are documented in `docs/post_v1_stages.md`. They are run from the project directory (`cd <project_dir>`), with paths relative to it.
 
 Stages 08–10 (nnU-Net preparation, training and inference) require a CUDA GPU. Training was executed with
 `scripts/09_train_nnunet.py` (local GPUs) and `scripts/conduzir_colab_v4.py` / `notebooks/pulmonary_colab_training.ipynb` (Google Colab).

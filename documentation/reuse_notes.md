@@ -4,3 +4,4 @@
   with `nnUNet_results` pointing to the corresponding folder in `models/`.
 - The splits (`data/nnunet_dataset/splits_final.json`) and reference masks allow direct comparison with other detectors on the same LIDC-IDRI cases.
 - Features and statistics of each stage are in `data/stage_outputs_10a_25/stage_<NN>/`; the column definitions are listed in `metadata/data_dictionary.csv`.
+- Tables of stages 28–32 are in `data/stage_outputs_28_32/<stage>/`; their scripts and purposes are listed in `docs/post_v1_stages.md`.

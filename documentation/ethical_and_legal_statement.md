@@ -5,3 +5,4 @@ and LNDb (Zenodo, CC BY-NC-ND 4.0). No image of these collections is redistribut
 derived, non-identifiable information (case identifiers of the public collections, cross-validation splits, numerical features, statistics, trained model weights and logs). No LNDb image or mask is included;
 LNDb is represented only by case identifiers and numerical results. No new data were collected from human participants.
 Users must comply with the data-use terms of each source collection and cite them.
+The radiological assessment records are archived only as anonymized, derived tables; the assessing radiologist is not identified.

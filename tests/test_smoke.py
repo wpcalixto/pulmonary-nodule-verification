@@ -23,9 +23,10 @@ ABS = re.compile(r"(?:/Volumes/|/Users/|/home/|/mnt/)")
 def main():
     errors = 0
     for d in ("scripts", "trainers", "patches", "tests"):
-        for f in sorted(os.listdir(os.path.join(ROOT, d))):
+        for sub, _, fs in sorted(os.walk(os.path.join(ROOT, d))):
+          for f in sorted(fs):
             if f.endswith(".py"):
-                p = os.path.join(ROOT, d, f)
+                p = os.path.join(sub, f)
                 compile(open(p, encoding="utf-8").read(), p, "exec")
                 head = open(p, encoding="utf-8").read(3000)
                 if d != "tests" and ("Title:" not in head or "License:" not in head):
